@@ -1,0 +1,44 @@
+{\rtf1\ansi\ansicpg949\cocoartf2821
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 #opensearch schema\
+\
+\pard\pardeftab720\sa213\partightenfactor0
+
+\fs29\fsmilli14667 \cf2 \expnd0\expndtw0\kerning0
+PUT /fake-news-rag\
+\{\
+\'a0 "settings": \{\
+\'a0\'a0\'a0 "index": \{\
+\'a0\'a0\'a0\'a0\'a0 "knn": true\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \
+\'a0\'a0\'a0 \}\
+\'a0 \},\
+\'a0 "mappings": \{\
+\'a0\'a0\'a0 "properties": \{\
+\'a0\'a0\'a0\'a0\'a0 "text": \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 "type": "text"\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \
+\'a0\'a0\'a0\'a0\'a0 \},\
+\'a0\'a0\'a0\'a0\'a0 "label": \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 "type": "integer"\'a0\'a0\'a0\'a0\'a0 \
+\'a0\'a0\'a0\'a0\'a0 \},\
+\'a0\'a0\'a0\'a0\'a0 "embedding": \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 "type": "knn_vector",\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 "dimension": 1536,\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 "method": \{\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 "name": "hnsw",\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 "space_type": "cosinesimil",\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 "engine": "nmslib",\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 "parameters": \{\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 "ef_construction": 512,\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 "m": 16\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \}\
+\'a0\'a0\'a0\'a0\'a0\'a0\'a0 \}\
+\'a0\'a0\'a0\'a0\'a0 \}\
+\'a0\'a0\'a0 \}\
+\'a0 \}\
+\}\
+}
